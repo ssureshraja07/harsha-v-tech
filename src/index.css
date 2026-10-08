@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@theme {
+  --color-ink: #0b1b33;
+  --color-signal: #1f6feb;
+  --color-mist: #eef3fa;
+  --color-steel: #5b6b82;
+  --font-display: "Sora", sans-serif;
+  --font-sans: "Public Sans", sans-serif;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { font-family: var(--font-sans); color: var(--color-ink); }
+h1, h2, h3 { font-family: var(--font-display); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { transition: none !important; } }
