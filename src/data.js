@@ -1,5 +1,5 @@
 export const company = {
-  name: 'HV Technologies',
+  name: 'Harsha V Technologies',
   phone: '+91 8072904297',
   email: 'hello@hvtechnologies.in',
   address: '12, Anna Salai, Chennai, Tamil Nadu 600002',

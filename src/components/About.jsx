@@ -25,18 +25,18 @@ export default function About() {
         <Reveal from="left" className="lg:sticky lg:top-24">
           <img
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80"
-            alt="HV Technologies team working together"
+            alt="Harsha V Technologies team working together"
             className="h-80 w-full rounded-2xl object-cover shadow-2xl sm:h-[420px] lg:h-[600px]"
           />
         </Reveal>
 
         <div>
           <Reveal from="right" delay={100}>
-            <h2 className="text-3xl font-bold sm:text-4xl">About HV Technologies</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">About Harsha V Technologies</h2>
           </Reveal>
           <Reveal from="right" delay={200}>
             <p className="mt-5 leading-relaxed text-steel">
-              HV Technologies is a software company that turns business problems into working products. Our team of developers, designers and marketers works with you from the first idea to launch and beyond.
+              Harsha V Technologies is a software company that turns business problems into working products. Our team of developers, designers and marketers works with you from the first idea to launch and beyond.
             </p>
           </Reveal>
           <Reveal from="right" delay={300}>

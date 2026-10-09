@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { services } from '../data'
+import hvLogo from '../images/hv-logo.jpg'
 
 const links = [
   { label: 'Home', id: 'home' }, { label: 'About Us', id: 'about' },
@@ -33,15 +34,45 @@ export default function Navbar() {
     else navigate('/', { state: { scrollTo: id } })
   }
 
+  const words = ['Ideas', 'Code', 'Growth']
+
+  function RotatingTag() {
+  const [i, setI] = useState(0)
+  useEffect(() => {
+    const t = setInterval(() => setI((n) => (n + 1) % words.length), 1800)
+    return () => clearInterval(t)
+  }, [])
+  return (
+    <span key={i} className="tag-in block text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">
+      {words[i]}
+    </span>
+  )
+}
+
   const dark = solid || !onHome || open
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${dark ? 'bg-ink/95 shadow-lg backdrop-blur' : 'bg-transparent'}`}>
       <nav className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5">
-        <button onClick={() => go('home')} className="flex items-center gap-3 text-white" aria-label="HV Technologies home">
-          <img src="/logo.png" alt="" className="h-10 w-10 rounded-md bg-white object-cover" />
-          <span className="font-display text-lg font-bold">HV Technologies</span>
-        </button>
+        <button onClick={() => go('home')} className="flex items-center gap-3 text-left text-white" aria-label="Harsha V Technologies home">
+  <img src={hvLogo} alt="" className="h-10 w-10 shrink-0 rounded-md bg-white object-cover" />
+  <span className="flex flex-col leading-tight">
+    <span className="font-display text-base font-bold md:text-lg">
+      <span className="block md:inline">Harsha V</span>
+      <span className="block md:ml-1.5 md:inline">Technologies</span>
+    </span>
+
+    {/* desktop: all three together, static */}
+    <span className="hidden gap-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-gold md:flex">
+      {words.map((w, i) => (
+        <span key={w}>{w}{i < words.length - 1 && <span className="ml-2">·</span>}</span>
+      ))}
+    </span>
+
+    {/* mobile: one by one */}
+    <span className="mt-0.5 md:hidden"><RotatingTag /></span>
+  </span>
+</button>
 
         {/* desktop */}
         <ul className="hidden items-center gap-8 md:flex">

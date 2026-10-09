@@ -34,7 +34,7 @@ export default function Contact() {
 
         <div>
           <Reveal from="right">
-            <h2 className="text-3xl font-bold sm:text-4xl">Contact HV Technologies</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl"> Harsha V Technologies</h2>
             <p className="mt-3 text-steel">Tell us what you need. We reply within one working day.</p>
           </Reveal>
           <Reveal from="right" delay={200}>
